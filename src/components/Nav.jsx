@@ -1,5 +1,6 @@
 import '../styles/components.css'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -13,10 +14,11 @@ const Nav = () => {
             
             <ul className="ul">
                 <li className='close'><button className='close' onClick={() => setVisible(false)}>cerrar</button></li>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Carrito</a></li>
+                <li><Link to={'/'}>Inicio</Link></li>
+                <li><Link to={'/Acerca'}>Acerca de</Link></li>
+                <li><Link to={'/Carrito'}>Carrito</Link></li>
+                <li><Link to={'/Contacto'}>Contacto</Link></li>
+                
             </ul>
         </nav>
     </div>

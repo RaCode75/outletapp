@@ -30,7 +30,10 @@ const Productos = () => {
         <ul>
             {productos.map((producto) =>(
                 <li key={producto.id}>
-                    {producto.title}</li>
+                    {producto.title}:
+                    {producto.price}$
+                    <img src={producto.image} heigth={60} width={60}/>
+                    </li>
                 
             ))}
         </ul>

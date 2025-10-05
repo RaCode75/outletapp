@@ -2,7 +2,7 @@ import '../styles/components.css';
 const Header = () => {
     return(
 <div className="header">
-    <h1 className="titulo">Emoji Shop</h1>
+    <h1 className="titulo">Outlet App</h1>
 
 </div>
     );
