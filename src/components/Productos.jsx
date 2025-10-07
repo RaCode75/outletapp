@@ -27,10 +27,10 @@ const Productos = () => {
 
     return(
         <div className="expositor">
-        <h2>Productos</h2>
-        <ul>
+        <h1>Productos</h1>
+        <ul className="prods">
             { productos.map((producto) => (
-            <li key={producto.id}>
+            <li key={producto.id} className="li_item">
                 <Detalles data={producto} />
             </li>
             ))

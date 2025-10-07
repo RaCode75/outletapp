@@ -49,10 +49,47 @@ a:hover{
     color:fff;
 }
 
+.li_item{
+    list-style: none;
+}
+
+/************Productos******************/
 .expositor{
+
     z-index: 1;
     position:relative;
+    text-align: center;
+
+
 }
+
+.h1 {
+    margin: auto;
+
+}
+
+.prods{
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/**************Card **************/
+.card {
+    width: 200px;
+    height:300px;
+    overflow: hidden;
+    border: 1px solid black;
+    margin: 1rem;
+    text-align: center;
+}
+ .imgdetalles {
+    width: 60px;
+    height: 60px;
+ }
 
 @media  screen and (max-width: 550px) {
 
@@ -99,17 +136,4 @@ a:hover{
         bottom: 0;
     }
     
-}
-
-.expositor {
-    display: flex;
-    align-content: space-between;
-
-}
-
-/**************Card **************/
-.card {
-    width: 200px;
-    border: 1px solid black;
-    margin: 1rem;
 }
