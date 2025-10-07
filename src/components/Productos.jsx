@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Detalles from "./Detalles";
 
 const Productos = () => {
     const [productos, setProductos] = useState([]);
@@ -28,14 +29,21 @@ const Productos = () => {
         <div className="expositor">
         <h2>Productos</h2>
         <ul>
-            {productos.map((producto) =>(
+            { productos.map((producto) => (
+            <li key={producto.id}>
+                <Detalles data={producto} />
+            </li>
+            ))
+            
+            
+            
+            /* {productos.map((producto) =>(
                 <li key={producto.id}>
                     {producto.title}:
                     {producto.price}$
                     <img src={producto.image} heigth={60} width={60}/>
-                    </li>
-                
-            ))}
+                    </li>                
+            ))} */}
         </ul>
         </div>
     );

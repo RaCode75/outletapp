@@ -101,4 +101,15 @@ a:hover{
     
 }
 
+.expositor {
+    display: flex;
+    align-content: space-between;
 
+}
+
+/**************Card **************/
+.card {
+    width: 200px;
+    border: 1px solid black;
+    margin: 1rem;
+}
