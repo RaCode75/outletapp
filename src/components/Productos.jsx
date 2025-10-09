@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import Detalles from "./Detalles";
+import Card from "./Card";
+import { Link } from "react-router-dom";
 
 const Productos = () => {
     const [productos, setProductos] = useState([]);
@@ -31,19 +32,11 @@ const Productos = () => {
         <ul className="prods">
             { productos.map((producto) => (
             <li key={producto.id} className="li_item">
-                <Detalles data={producto} />
+                <Link to={`/productos/${producto.id}`} >Detalle</Link>
+                <Card data={producto} />
+                
             </li>
-            ))
-            
-            
-            
-            /* {productos.map((producto) =>(
-                <li key={producto.id}>
-                    {producto.title}:
-                    {producto.price}$
-                    <img src={producto.image} heigth={60} width={60}/>
-                    </li>                
-            ))} */}
+            ))}
         </ul>
         </div>
     );

@@ -7,6 +7,7 @@ import Inicio from './components/Inicio'
 import Acerca from './components/Acerca'
 import Contacto from './components/Contacto'
 import Carrito from './components/Carrito'
+import Detalles from './components/Detalles'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path={'/Acerca'} element={<Acerca/>}/>
       <Route path={'/Carrito'} element={<Carrito/>}/>
       <Route path={'/Contacto'} element={<Contacto/>}/>
+      <Route path={'/productos/:id'} element={<Detalles/>}/>
     </Routes>
     <Productos />
     </>
