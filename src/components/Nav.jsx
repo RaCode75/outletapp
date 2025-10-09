@@ -15,9 +15,9 @@ const Nav = () => {
             <ul className="ul">
                 <li className='close'><button className='close' onClick={() => setVisible(false)}>cerrar</button></li>
                 <li><Link to={'/'}>Inicio</Link></li>
-                <li><Link to={'/Acerca'}>Acerca de</Link></li>
-                <li><Link to={'/Carrito'}>Carrito</Link></li>
-                <li><Link to={'/Contacto'}>Contacto</Link></li>
+                <li><Link to={'/acerca'}>Acerca de</Link></li>
+                <li><Link to={'/categoria'}>Categoria</Link></li>
+                <li><Link to={'/contacto'}>Contacto</Link></li>
                 
             </ul>
         </nav>

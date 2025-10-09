@@ -82,13 +82,65 @@ a:hover{
     width: 200px;
     height:300px;
     overflow: hidden;
-    border: 1px solid black;
-    margin: 1rem;
+    border: 1px solid #888;
+    box-shadow: 5px 5px 5px 0px rgba(8,8,8,0.33);
+    margin: 1rem 4rem;
     text-align: center;
 }
- .imgdetalles {
+ .imgCard {
     width: 60px;
     height: 60px;
+ }
+
+ /******************Carrito*********************************************************************/
+
+ .cartContainer {
+   text-align: center;
+
+ }
+
+ .cartIcon {
+    width: 100%;
+ }
+
+     .cartImg{
+        display: inline-block;
+    }
+
+         .cartTag{
+        display: inline-block;
+    }
+
+    .cardCart{
+        width: 200px;
+        height:300px;
+        overflow: hidden;
+        border: 1px solid #888;
+        box-shadow: 5px 5px 5px 0px rgba(8,8,8,0.33);
+        margin: 1rem 4rem;
+        padding: 4rem 0 0 0;
+        text-align: center;
+    }
+
+
+ .cart{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    
+    padding: 1rem;
+    margin: 1rem;
+ }
+
+ .cardDetalles {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+ }
+
+ .imgDetalles{
+    width: 200px;
+    height: auto;
  }
 
 @media  screen and (max-width: 550px) {

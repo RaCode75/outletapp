@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import Detalles from "./Detalles";
+import Card from "./Card";
+import { Link } from "react-router-dom";
 
-const Productos = () => {
+const Productos = ({addProduct}) => {
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState(null);
     const [cargando, setCargando] = useState(true);
@@ -31,19 +32,14 @@ const Productos = () => {
         <ul className="prods">
             { productos.map((producto) => (
             <li key={producto.id} className="li_item">
-                <Detalles data={producto} />
+                <Link to={`/productos/${producto.id}`}>
+                <Card data={producto} />
+                </Link>
+                <button onClick={() => addProduct(producto)}className='comprar'>Agregar al carrito</button>
             </li>
             ))
             
-            
-            
-            /* {productos.map((producto) =>(
-                <li key={producto.id}>
-                    {producto.title}:
-                    {producto.price}$
-                    <img src={producto.image} heigth={60} width={60}/>
-                    </li>                
-            ))} */}
+            }
         </ul>
         </div>
     );
