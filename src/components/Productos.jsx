@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Card from "./Card";
 import { Link } from "react-router-dom";
 
+
 const Productos = ({addProduct}) => {
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState(null);

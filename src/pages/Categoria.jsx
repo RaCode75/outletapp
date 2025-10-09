@@ -5,7 +5,7 @@
     
     return(
         <>
-         
+         <h2>Bienvenidos a Categoria...</h2>
         </>
       
     );

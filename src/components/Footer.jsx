@@ -1,7 +1,7 @@
 function Footer(){
     return(
-        <footer>
-            <p>&copy; 2024 - Mi Aplicación React</p>
+        <footer className="footer">
+            <p className="foot">&copy; 2024 - Mi Aplicación React</p>
         </footer>
     );
 }

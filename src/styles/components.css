@@ -143,6 +143,20 @@ a:hover{
     height: auto;
  }
 
+ /***************Footer****************************/
+.footer {
+    display: block;
+    height: 2rem;
+    padding: rem;
+    background-color: aquamarine;
+
+}
+
+.foot{
+    text-align: center;
+}
+
+
 @media  screen and (max-width: 550px) {
 
     .contenedor{
