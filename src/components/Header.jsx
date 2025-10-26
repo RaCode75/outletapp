@@ -1,8 +1,9 @@
-import '../styles/components.css';
+import Nav from './Nav'
+
 const Header = () => {
     return(
 <div className="header">
-    <h1 className="titulo">Outlet App</h1>
+    <Nav />    
 
 </div>
     );

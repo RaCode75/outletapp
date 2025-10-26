@@ -16,7 +16,7 @@ const Inicio = () => {
     return(
         <>
             <Productos addProduct = {addToCarrito} />
-            <hr/>
+            <hr className="m-6"/>
             <Carrito
                 inCarrito = {carrito}
                 deletedFromCarrito = {deleteToCarrito}

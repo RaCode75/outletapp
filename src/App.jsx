@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
-import Nav from './components/Nav'
 import Productos from './components/Productos'
 import Inicio from './pages/Inicio'
 import Acerca from './components/Acerca'
@@ -17,7 +16,6 @@ function App() {
   return (
     <>
     <Header />
-    <Nav />
     <Routes>
       <Route path={'/'} element={<Inicio/>}/>
       <Route path={'/acerca'} element={<Acerca/>}/>
@@ -25,7 +23,7 @@ function App() {
       <Route path={'/contacto'} element={<Contacto/>}/>
       <Route path={'/productos/:id'} element={<Detalles/>}/>
     </Routes>
-    <Footer />
+    <Footer/>
     </>
   )
 }
