@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
-import { Link } from "react-router-dom";
+import { Link, RouterContextProvider } from "react-router-dom";
+import { useContext } from "react";
+import { CarritoContext } from "../context/CarritoContext";
 
 
-const Productos = ({addProduct}) => {
+const Productos = () => {
     const [productos, setProductos] = useState([]);
     const [error, setError] = useState(null);
     const [cargando, setCargando] = useState(true);
+
+    const{addToCarrito} = useContext(CarritoContext);
 
     const URL = 'https://fakestoreapi.com/products'
 
@@ -37,9 +41,9 @@ const Productos = ({addProduct}) => {
                 <Card data={producto} />
                 </Link>
                 <div className="justify-center">
-                <button onClick={() => addProduct(producto)}className='group relative inline-flex h-6 w-[200px] items-center justify-center
+                <button onClick={() => addToCarrito(producto)}className='group relative inline-flex h-6 w-[200px] items-center justify-center
                  overflow-hidden rounded-md border border-neutral-200 bg-indigo-200 px-6 font-medium text-neutral-600 transition-all
-                 [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none mt-2 mb-4'>Agregar al carrito</button>
+                 [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none mt-2 mb-4 hover:cursor-pointer hover:bg-indigo-300'>Agregar al carrito</button>
                  </div>
             </li>
             ))

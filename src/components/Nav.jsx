@@ -31,7 +31,7 @@ const Nav = () => {
                 <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw content-center rounded hover:text-gray-600 mx-6'><Link to={'/acerca'}>Acerca de</Link></button></li>
                 <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw content-center rounded hover:text-gray-600 mx-6'><Link to={'/categoria'}>Categoria</Link></button></li>
                 <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw text-center content-center px-2 rounded hover:text-gray-600 mx-6'><Link to={'/contacto'}>Contacto</Link></button></li>
-                <li className=' '><div className='bg-amber-50 w-12 rounded-full my-1'><img src='../src/assets/cart.svg' className='size-12'></img></div></li>
+                <li className=' '><div className='bg-amber-50 w-12 rounded-full my-1'><Link to={'/carrito'}><img src='../src/assets/cart.svg' className='size-12'></img></Link></div></li>
                 
             </ul>
             </div>

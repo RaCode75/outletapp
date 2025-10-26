@@ -8,6 +8,7 @@ import Categoria from './pages/Categoria'
 import Contacto from './components/Contacto'
 import Detalles from './pages/Detalles'
 import Footer from './components/Footer'
+import Carrito from './components/Carrito'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path={'/categoria'} element={<Categoria/>}/>
       <Route path={'/contacto'} element={<Contacto/>}/>
       <Route path={'/productos/:id'} element={<Detalles/>}/>
+      <Route path={'/carrito'} element={<Carrito/>}/>
     </Routes>
     <Footer/>
     </>
