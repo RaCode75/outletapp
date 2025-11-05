@@ -1,24 +1,22 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {useAuthContext } from '../context/AuthContext';
 
 
 const Nav = () => {
     const [menu, setMenu] = useState(false);
     const handleMenu = () => {
         setMenu(!menu);
-        console.log("click")
     }
+    const {usuario} = useAuthContext();
+    const esAdmin = usuario === 'admin';
 
     return(
         <div className={menu?'transition-[height] ease-in-out delay-150 h-[100vh] px-6 py-4 bg-indigo-500'
             :'transition-[height] ease-in-out delay-150 h-60px px-4 py-4  bg-indigo-500'
             }>
             <section className='container mx-auto sm:flex-row'>
-                <div className='flex justify-between items-center'>
-                    <div className='text-center mr-2'>
-                        <img src='../src/assets/logo.png' className='h-20 w-20 mr-2 ml-2'></img>
-                        <h2 className='text-lg font-medium text-gray-300 '>Outlet App</h2>
-                    </div>
+                <div className='flex justify-between items-center'>                    
                     <div className= 'h-10 w-10 text-gray-700 z-10 sm:hidden' onClick={handleMenu}>
                         {menu?<img src='../src/assets/x.png' alt='menu' /> : 
                         <img src='../src/assets/menu.png' alt='menu' />}
@@ -31,7 +29,13 @@ const Nav = () => {
                 <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw content-center rounded hover:text-gray-600 mx-6'><Link to={'/acerca'}>Acerca de</Link></button></li>
                 <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw content-center rounded hover:text-gray-600 mx-6'><Link to={'/categoria'}>Categoria</Link></button></li>
                 <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw text-center content-center px-2 rounded hover:text-gray-600 mx-6'><Link to={'/contacto'}>Contacto</Link></button></li>
-                <li className=' '><div className='bg-amber-50 w-12 rounded-full my-1'><Link to={'/carrito'}><img src='../src/assets/cart.svg' className='size-12'></img></Link></div></li>
+                    
+
+                    {esAdmin &&
+                <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw text-center content-center px-2 rounded hover:text-gray-600 mx-6'>
+                    <Link to={'/admin'}>Admin</Link></button></li>
+                    }
+                <li className=' '></li>
                 
             </ul>
             </div>
