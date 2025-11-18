@@ -16,7 +16,7 @@ export const CarritoProvider = ({children}) => {
 
     const emptyCarrito = () => {
         setCarrito([]);
-    }
+    };
 
     return (
         <CarritoContext.Provider

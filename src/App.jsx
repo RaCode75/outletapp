@@ -9,6 +9,8 @@ import Detalles from './pages/Detalles'
 import Footer from './components/Footer'
 import Carrito from './components/Carrito'
 import Login from './pages/Login'
+import RutaProtegida from './components/RutaProtegida'
+import Admin from './components/Admin'
 
 
 function App() {
@@ -31,6 +33,13 @@ function App() {
           <Carrito/>
         </RutaProtegida>
               }
+      />
+
+      <Route
+        path="/admin"
+        element={
+          <Admin />
+        }
       />
     </Routes>
     <Footer/>
