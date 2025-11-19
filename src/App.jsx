@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 import Carrito from './components/Carrito'
 import Login from './pages/Login'
 import RutaProtegida from './components/RutaProtegida'
-import Admin from './components/Admin'
+import Admin from './pages/Admin'
 
 
 function App() {

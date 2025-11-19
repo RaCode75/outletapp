@@ -3,6 +3,7 @@ import { useAuthContext } from '../context/AuthContext';
 import { CarritoContext } from '../context/CarritoContext';
 import Nav from './Nav'
 import {Link} from 'react-router-dom';
+import logo from '../assets/logo.png'
 
 
 const Header = () => {
@@ -14,7 +15,7 @@ const Header = () => {
     return(
         <header  className="flex items-center justify-between bg-indigo-500">
             <div className='text-center my-1 mx-1'>
-                <img src='../src/assets/logo.png' className='h-20 w-20 mr-2 ml-2'></img>
+                <img src= {logo} className='h-20 w-20 mr-2 ml-2'></img>
                 <h2 className='text-lg font-medium text-gray-300 '>Outlet App</h2>
             </div>
             <div className='px-0 mx-0'>

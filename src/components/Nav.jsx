@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {useAuthContext } from '../context/AuthContext';
+import menuHam from '../assets/menu.png';
+import x from '../assets/x.png';
 
 
 
@@ -19,8 +21,8 @@ const Nav = () => {
             <section className='mx-auto sm:flex-row'>
                 <div className='flex justify-between items-center'>                    
                     <div className= 'h-10 w-10 text-gray-700 z-10 sm:hidden' onClick={handleMenu}>
-                        {menu?<img src='../src/assets/x.png' alt='menu' /> : 
-                        <img src='../src/assets/menu.png' alt='menu' />}
+                        {menu?<img src={x} alt='menu' /> : 
+                        <img src={menuHam} alt='menu' />}
                     </div>
                 
             
