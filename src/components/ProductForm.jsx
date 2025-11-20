@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {useProductsContext} from "../context/ProductsContext";
+import x from "../assets/x.png";
 
 const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
 
@@ -23,47 +24,67 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
 
     return (
         <div
-            className=""
+            className="fixed top-0 right-0 bottom-0 left-0 z-20 flex overflow-x-hidden overflow-y-auto
+                justify-center items-center w-full h-full p-4 box-border bg-indigo-200"
             aria-modal="true"
             role="dialog"
             >
-            <div className="">
-                    <div className="">
-                        <div className="">
-                            <h3>
+            <div className="relative  w-full w-max-96 h-full">
+                    <div className='relative border-1 rounded-2xl p-4 w-full'>
+                        <div className="flex items-center justify-between border-b-1">
+                            <h3 className="text-2xl">
                             {modo === "add" ? "Agregar Producto" : "Editar Producto"}
                             </h3>
                             <button
                                 type="button"
                                 onClick={onClose}
-                                className="">
-                                    <img src="../src/assets/x.png" alt="" />
+                                className="rounded-2xl w-10 h-10 ml-auto pb-3
+                                inline-flex justify-center items-center cursor-pointer transition-all delay-150 ease-in-out p0 ">
+                                    <img src={x} alt="" />
                                 </button>
                         </div>
                 <form onSubmit={submitManage}>
-                    <div className="">
+                    <div className="grid gap-4 grid-cols-1 md:grid-cols-2 pt-4 pb-4">
 
-             {"*********campo Nombre***********"}
+             {/*********campo Nombre***********/}
 
                         <div className="col-span-2">
-                            <label className="">
+                            <label className="block mb-3 ">
                                 Nombre
                             </label>
                             <input
                                 type="text"
                                 name="nombre"
                                 id="nombre"
-                                className=""
+                                className="block border-1 border-indigo-300 rounded-2xl w-full px-3 py-3 box-border transition-all delay-150 ease-in-out
+                                placeholder: text-indigo-500 bg-indigo-100 focus:outline-indigo-500"
                                 placeholder="Nombre del producto"
-                                value={producto.name || ""}
+                                value={producto.nombre || ""}
+                                onChange={changeManage}
+                                required
+                                />
+                        </div>
+            {/****campo categoria***** */}
+                        <div className="col-span-2">
+                            <label className="block mb-3 ">
+                                Categoria
+                            </label>
+                            <input
+                                type="text"
+                                name="categoria"
+                                id="categoria"
+                                className="block border-1 border-indigo-300 rounded-2xl w-full px-3 py-3 box-border transition-all delay-150 ease-in-out
+                                placeholder: text-indigo-500 bg-indigo-100 focus:outline-indigo-500"
+                                placeholder="Nombre del producto"
+                                value={producto.categoria || ""}
                                 onChange={changeManage}
                                 required
                                 />
                         </div>
 
-    {"*********campo Precio***********"}
+    {/*********campo Precio***********/}
 
-                        <div className="col-span-1 md:col-span-2">
+                        <div className="col-span-1 md:col-span-2 w-full">
                             <label className="">
                                 Precio
                             </label>
@@ -71,7 +92,8 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                                 type="number"
                                 name="precio"
                                 id="precio"
-                                className=""
+                                className="block border-1 border-indigo-300 rounded-2xl w-full px-3 py-3 box-border transition-all delay-150 ease-in-out
+                                placeholder: text-indigo-500 bg-indigo-100 focus:outline-indigo-500"
                                 placeholder="$ 0.00"
                                 value={producto.precio || ""}
                                 onChange={changeManage}
@@ -81,9 +103,9 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                                 />
                         </div>
 
-            {'*******Campor imagen*****'}
+            {/*******Campo imagen*****/}
 
-                    <div className="col-span-1 md:col-span-2">
+                    <div className="col-span-1 md:col-span-2 w-full">
                         <label className="">
                             URL de la Imagen
                         </label>
@@ -91,24 +113,25 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                             type="text"
                             name="imagen"
                             id="imagen"
-                            className=""
+                            className="col-span-1 md:col-span-2 w-full"
                             placeholder="https://ejemplo.com/imagen.png"
                             value={producto.imagen || ''}
                             onChange={changeManage}
                             />
                     </div>
 
-            {'*******Campor descripcion*****'}
+            {/*******Campo descripcion*****/}
 
                     <div className="col-span-2">
                         <label className="">
                             Descripción del Producto
                         </label>
                         <textarea
-                            name="descripción"
-                            id="descripción"
+                            name="descripcion"
+                            id="descripcion"
                             rows='4'
-                            className=""
+                            className="block border-1 border-indigo-300 rounded-2xl w-full px-3 py-3 box-border transition-all delay-150 ease-in-out
+                                placeholder: text-indigo-500 bg-indigo-100 focus:outline-indigo-500 resize-y"
                             placeholder="Descripción del Producto"
                             value={producto.descripcion || ''}
                             onChange={changeManage}
@@ -116,10 +139,10 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                             ></textarea>                            
                     </div>
                 </div>
-        {'*******Botones accion******'}
+        {/*******Botones accion******/}
 
                 <div className="">
-            {'******Boton primario****'}
+            {/******Boton primario****/}
                     <button
                         type="submit"
                         className=""
@@ -127,7 +150,7 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                         {modo === 'add' ? <>Agregar</> : <>Actualizar</>}
                     </button>
 
-            {'***Boton sec. Cancel***'}
+            {/***Boton sec. Cancel***/}
                 <button
                     type="button"
                     onClick={onClose}

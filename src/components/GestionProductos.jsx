@@ -1,6 +1,6 @@
 import { useState } from "react";
-import FormProducto from "./ProductForm";
 import { useProductsContext } from "../context/ProductsContext";
+import Card from "./Card";
 import CirclePlus from "../assets/CirclePlus";
 import SquarePen from "../assets/SquarePen";
 import TrashIcon from "../assets/TrashIcon";
@@ -11,19 +11,19 @@ const GestionProductos = () => {
   const { productos, eliminarProducto } = useProductsContext();
   // Estados 
   const [mostrarForm, setMostrarForm] = useState(false);
-  const [modoFormulario, setModoFormulario] = useState("agregar");
+  const [modoFormulario, setModoFormulario] = useState("add");
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
   // Abrir formulario para AGREGAR
   const abrirFormularioAgregar = () => {
-    setModoFormulario("agregar");
+    setModoFormulario("add");
     setProductoSeleccionado(null); // Sin producto inicial
     setMostrarForm(true);
   };
 
   // Abrir formulario para EDITAR
   const abrirFormularioEditar = (producto) => {
-    setModoFormulario("editar");
+    setModoFormulario("edit");
     setProductoSeleccionado(producto); // Pasar el producto a editar
     setMostrarForm(true);
   };
@@ -35,9 +35,10 @@ const GestionProductos = () => {
   };
 
   return (
-    <div className={''}>
-      <div className={''}>
-        <div className={''}>
+    <div className=''>
+      <div className=''>
+        <div className=''>
+          <div className="" ></div>
            <h2>Lista de Productos</h2>
         {/* Botón para agregar producto */}
         <button
@@ -53,15 +54,14 @@ const GestionProductos = () => {
           {productos.length === 0 ? (
             <p>No hay productos</p>
           ) : (
-            <div style={{ display: "grid", gap: "5px"}}>
+            <div className="grid grid-cols-4 gap-2 p-4">
               {productos.map((producto) => (
                 <div
                   key={producto.id}
-                  className={''}
-                >
-                  <img className={''} src={producto.imagen} alt={producto.nombre} />
-                  <h3>{producto.nombre}</h3>
-                  <p>Precio: ${producto.precio}</p>
+                  className=''
+                >                 
+                  <Card data={producto} />
+
                   {/* Botones para editar y eliminar este producto */}
                   <button 
                     className={''} 
@@ -88,7 +88,7 @@ const GestionProductos = () => {
               <ProductForm
                 productoInicial={productoSeleccionado || {}}
                 modo={modoFormulario}
-                onCerrar={cerrarFormulario}
+                onClose={cerrarFormulario}
               />
           </>
         )}

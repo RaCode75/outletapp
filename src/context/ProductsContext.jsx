@@ -8,7 +8,7 @@ export const ProductsProvider = ({ children }) => {
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
   
-  const API = "https://68d5d31de29051d1c0afa93e.mockapi.io/productos";
+  const API = "https://691e2b39bb52a1db22bd3368.mockapi.io/productos";
   
   // Cargar productos al montar el componente
   useEffect(() => {
@@ -38,7 +38,7 @@ export const ProductsProvider = ({ children }) => {
   };
 
   // Funcion para agregar el producto a la API
-  const agregarProducto = async (producto) => {
+  const addProduct = async (producto) => {
     try {
       setError(null);
 
@@ -63,7 +63,7 @@ export const ProductsProvider = ({ children }) => {
     }
   };
 
-  const editarProducto = async (producto) => {
+  const editProduct = async (producto) => {
     try {
       setError(null);
 
@@ -121,8 +121,8 @@ export const ProductsProvider = ({ children }) => {
       cargando,
       error, 
       cargarProductos, 
-      agregarProducto, 
-      editarProducto, 
+      addProduct, 
+      editProduct, 
       eliminarProducto 
     }}>
       {children}
