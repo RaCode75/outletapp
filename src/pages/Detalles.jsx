@@ -6,7 +6,7 @@ const Detalles = () => {
   const { id } = useParams();
   const [producto, setProducto] = useState(null);
   const [error, setError] = useState(null);
-  const URL = `https://fakestoreapi.com/products/${id}`;
+  const URL = `https://691e2b39bb52a1db22bd3368.mockapi.io/productos/${id}`;
 
   useEffect(() => {
     fetch(URL)
@@ -22,21 +22,21 @@ const Detalles = () => {
   if(!producto)
     return <p>{error} ......</p>
   
-  const {title, price,image, description, category} = producto
+  const {nombre , precio,imagen, descripcion, categoria} = producto
 
     return (
-        <div className="cardDetalles">
-            <h3>{title}</h3>
-                <img src={image} className="imgDetalles"></img>
+        <div className="flex flex-col items-center">
+            <h3 className="w-full text-center mb-2 py-2 font-bold text-indigo-50 text-3xl bg-indigo-300">{nombre}</h3>
+                <img src={imagen} className="w-100"></img>
             <p>
-                <strong>$ {price}</strong>
+                <strong>$ {precio}</strong>
             </p>
 
-            <p className="descripcion">
-                {description}
+            <p className="mx-8">
+                {descripcion}
             </p>
             <p className="cat">
-                <i>Categoria: </i> {category}
+                <i>Categoria: </i> {categoria}
             </p>
 
         </div>

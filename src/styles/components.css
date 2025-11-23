@@ -55,7 +55,7 @@ a:hover{
     list-style: none;
 }
 
-/************Productos******************/
+/************Productos******************//*
 .expositor{
 
     z-index: 1;
@@ -79,7 +79,7 @@ a:hover{
     flex-wrap: wrap;
     justify-content: space-around;
 }
-/**************Card **************/
+/**************Card **************//*
 .card {
     width: 200px;
     height:300px;
@@ -94,7 +94,7 @@ a:hover{
     height: 60px;
  }
 
- /******************Carrito*********************************************************************/
+ /******************Carrito*********************************************************************//*
 
  .cartContainer {
    text-align: center;
@@ -145,7 +145,7 @@ a:hover{
     height: auto;
  }
 
- /***************Footer****************************/
+ /***************Footer****************************//*
 .footer {
     display: block;
     height: 2rem;

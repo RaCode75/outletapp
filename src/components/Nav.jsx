@@ -26,15 +26,15 @@ const Nav = () => {
                     </div>
                 
             
-            <ul className={menu?'flex flex-col justify-center items-center h-full absolute top-6 bottom-0 left-0 right-0'
-                    :'hidden sm:flex  sm:flex-row sm:h-60px sm:top-0 sm:justify-end sm:items-center sm:gap-10'}>
-                <li><button className='text-indigo-50 font-medium text-lg py-0.5 px-auto bg-indigo-500  hover:bg-gray-200 w-100vw  rounded hover:text-gray-600 mx-6'><Link to={'/'}>Inicio</Link></button></li>
-                <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw content-center rounded hover:text-gray-600 mx-6'><Link to={'/categoria'}>Categoria</Link></button></li>
-                <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw text-center content-center px-2 rounded hover:text-gray-600 mx-6'><Link to={'/contacto'}>Contacto</Link></button></li>
+            <ul className={menu?'flex flex-col items-center h-full absolute top-6 pt-20 bottom-0 left-0 right-0 gap-2'
+                    :'hidden sm:flex  sm:flex-row sm:h-60px sm:top-0 items-center justify-center mt-6'}>
+                <li><button className='text-indigo-50 font-medium text-lg py-0.5 px-auto bg-indigo-500  hover:bg-gray-200   rounded hover:text-gray-600 mx-6'><Link to={'/'}>Inicio</Link></button></li>
+                <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200  content-center rounded hover:text-gray-600 mx-6'><Link to={'/categoria'}>Categoria</Link></button></li>
+                <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200  text-center content-center px-2 rounded hover:text-gray-600 mx-6'><Link to={'/contacto'}>Contacto</Link></button></li>
                     
 
                     {esAdmin &&
-                <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw text-center content-center px-2 rounded hover:text-gray-600 mx-6'>
+                <li><button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 text-center content-center px-2 rounded hover:text-gray-600 mx-6'>
                     <Link to={'/admin'}>Admin</Link></button></li>
                     }
                 <li className=' '></li>

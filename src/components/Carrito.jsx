@@ -4,17 +4,18 @@ import { CarritoContext } from "../context/CarritoContext";
 const Carrito = () => {
     const{carrito, deleteFromCarrito} = useContext(CarritoContext);
     return(
-        <div className="container mx-auto justify-items-center ">
-            <div className='w-full justify-items-center'>
+        <div className="mx-auto justify-items-center">
+            <div className='w-full justify-items-center pt-2 bg-indigo-300 '>
                 <img className="" src="../src/assets/cart.svg" width={50} height={50}/>
-                <h2 className="text-lg">Carrito</h2>
+                <h2 className="text-lg font-bold text-indigo-100">Carrito</h2>
+                <br />
             </div>
-            <div className="grid grid-cols-2 justify-items-center sm:grid-cols-3 md:grid-cols-4 bg-slate-100">
+            <div className="grid grid-cols-2 w-full justify-items-center sm:grid-cols-3 md:grid-cols-4 bg-slate-100">
 
                 {carrito.map((producto, index) => (
                     <div key={index} className="h-[300px] w-[200px] rounded-3x1 p-6 shadow-md  grid-rows-4 justify-items-center align-middle m-2 bg-slate-50">
-                        <img className="size-20 m-1" src= {producto.image} alt={producto.title} />
-                        <p> { producto.title } : { producto.price } $ </p>
+                        <img className="size-20 m-1" src= {producto.imagen} alt={producto.nombre} />
+                        <p> { producto.nombre } : { producto.precio } $ </p>
                         <button onClick={() => deleteFromCarrito(index)} className='group relative inline-flex
                          h-12 mt-4 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-slate-200 px-6
                          font-medium text-neutral-600 transition-all [box-shadow:0px_4px_1px_#a3a3a3] hover:bg-amber-300 hover:cursor-pointer active:translate-y-[2px]

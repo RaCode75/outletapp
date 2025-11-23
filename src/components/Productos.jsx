@@ -12,7 +12,7 @@ const Productos = () => {
 
     const{addToCarrito} = useContext(CarritoContext);
 
-    const URL = 'https://fakestoreapi.com/products'
+    const URL = 'https://691e2b39bb52a1db22bd3368.mockapi.io/productos'
 
     useEffect(() => {
         fetch(URL)
@@ -34,9 +34,9 @@ const Productos = () => {
     return(
         <div className="expositor bg-indigo-50 align-middle justify-center">
         <h1 className="w-full text-center mb-2 py-2 font-bold text-indigo-50 text-3xl bg-indigo-300">Productos</h1>
-        <ul className="grid grid-cols-2 justify-items-center sm:grid-cols-3 md:grid-cols-4">
+        <ul className="grid grid-cols-2 justify-around gap-1 items-center md:grid-cols-3 lg:grid-cols-4">
             { productos.map((producto) => (
-            <li key={producto.id} className=" flex flex-col align-middle justify-items-center basis-1/4">
+            <li key={producto.id} className=" flex flex-col align-middle items-center basis-1/4">
                 <Link to={`/productos/${producto.id}`}>
                 <Card data={producto} />
                 </Link>

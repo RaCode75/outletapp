@@ -37,54 +37,55 @@ const GestionProductos = () => {
   return (
     <div className=''>
       <div className=''>
-        <div className=''>
-          <div className="" ></div>
+        <div className='flex flex-row w-full justify-around bg-indigo-100 py-2'>
            <h2>Lista de Productos</h2>
-        {/* Botón para agregar producto */}
-        <button
-          onClick={abrirFormularioAgregar}
-          className={''}
-        >
-          <CirclePlus />
-          <p>Agregar Producto</p>
-        </button>
+          <div className="">
+            <button
+              onClick={abrirFormularioAgregar}
+              className='flex'
+            >
+              <CirclePlus />
+              <p className="ml-2">Agregar Producto</p>
+            </button>
+          </div>
         </div>
-        {/* Lista de productos */}
+        
         <div>
           {productos.length === 0 ? (
             <p>No hay productos</p>
           ) : (
-            <div className="grid grid-cols-4 gap-2 p-4">
+            <div className="grid grid-cols-2 gap-10 justify-center items-center md:grid-cols-3 lg:grid-cols-4 py-4">
               {productos.map((producto) => (
                 <div
                   key={producto.id}
-                  className=''
+                  className='m-auto'
                 >                 
                   <Card data={producto} />
 
-                  {/* Botones para editar y eliminar este producto */}
-                  <button 
-                    className={''} 
-                    onClick={() => abrirFormularioEditar(producto)}
-                  >
-                   <SquarePen />
-                  </button>
-                  <button 
-                    className={''} 
-                    onClick={() => eliminarProducto(producto.id)}
-                  >
-                   <TrashIcon />
-                  </button>
+                <div className="flex justify-between mx-1"> 
+                    <button 
+                      className='' 
+                      onClick={() => abrirFormularioEditar(producto)}
+                    >
+                    <SquarePen />
+                    </button>
+                    <button 
+                      className={''} 
+                      onClick={() => eliminarProducto(producto.id)}
+                    >
+                    <TrashIcon />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
           )}
         </div>
 
-        {/* Modal - Formulario condicional */}
+       
         {mostrarForm && (
           <>
-              {/* Pasar los props correctos según el modo */}
+              
               <ProductForm
                 productoInicial={productoSeleccionado || {}}
                 modo={modoFormulario}

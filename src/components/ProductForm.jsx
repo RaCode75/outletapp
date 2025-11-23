@@ -113,7 +113,9 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                             type="text"
                             name="imagen"
                             id="imagen"
-                            className="col-span-1 md:col-span-2 w-full"
+                            className="col-span-1 md:col-span-2 w-full block border-1 border-indigo-300 rounded-2xl
+                                 px-3 py-3 box-border transition-all delay-150 ease-in-out
+                                placeholder: text-indigo-500 bg-indigo-100 focus:outline-indigo-500"
                             placeholder="https://ejemplo.com/imagen.png"
                             value={producto.imagen || ''}
                             onChange={changeManage}
@@ -145,7 +147,9 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
             {/******Boton primario****/}
                     <button
                         type="submit"
-                        className=""
+                        className="group relative inline-flex h-6 w-[100px] mx-2 items-center justify-center
+                            overflow-hidden rounded-md border border-neutral-200 bg-pink-200 px-6 font-medium text-neutral-600 transition-all
+                            [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none mt-2 mb-4 hover:cursor-pointer hover:bg-pink-400 hover:text-neutral-200"
                     >
                         {modo === 'add' ? <>Agregar</> : <>Actualizar</>}
                     </button>
@@ -154,7 +158,9 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                 <button
                     type="button"
                     onClick={onClose}
-                    className=""
+                    className="group relative inline-flex h-6 w-[100px] items-center justify-center
+                        overflow-hidden rounded-md border border-neutral-200 bg-pink-200 px-6 font-medium text-neutral-600 transition-all
+                        [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none mt-2 mb-4 hover:cursor-pointer hover:bg-pink-400 hover:text-neutral-200"
                     >
                         Cancelar
                     </button>

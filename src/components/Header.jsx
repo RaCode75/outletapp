@@ -13,15 +13,15 @@ const Header = () => {
     const contadorCarrito = carrito.length;
 
     return(
-        <header  className="flex items-center justify-between bg-indigo-500">
-            <div className='text-center my-1 mx-1'>
-                <img src= {logo} className='h-20 w-20 mr-2 ml-2'></img>
+        <header  className="flex flex-row  sm:items-start justify-around bg-indigo-500">
+            <div className='items-start text-center my-1 mx-1'>
+                <img src= {logo} className='h-15 w-15 mr-2 ml-2 md:h-20 md:w-20'></img>
                 <h2 className='text-lg font-medium text-gray-300 '>Outlet App</h2>
             </div>
             <div className='px-0 mx-0'>
                 <Nav /> 
             </div>
-            <div className='text-center mr-2 bg-indigo-500 ml-0'>
+            <div className='bg-indigo-500 mt-3'>
                       {contadorCarrito > 0 && (
                         <span className=' absolute bg-amber-300 w-5 rounded-full'>
                             {contadorCarrito}
@@ -42,8 +42,8 @@ const Header = () => {
 
                 {isLogin ? 
                     <button onClick={logout} 
-                    className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500
-                    hover:bg-gray-200 w-100vw text-center content-center px-2 rounded hover:text-gray-600 mx-6'>Logout</button>
+                    className='text-indigo-50 font-medium text-lg mr-6 md:mx-auto py-0.5 bg-indigo-500
+                    hover:bg-gray-200 w-100vw content-center px-2 rounded hover:text-gray-600'>Logout</button>
                     :
                     <button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw text-center content-center px-2 rounded hover:text-gray-600 mx-6'>
                         <Link to={'/login'}>Login</Link></button>   

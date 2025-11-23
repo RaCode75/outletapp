@@ -1,6 +1,6 @@
 function Footer(){
     return(
-        <footer className="my-4 py-5  text-center bg-indigo-400 self-end">
+        <footer className=" py-5  text-center bg-indigo-400 self-end">
             <p className="font-medium text-gray-100">&copy; 2024 - Mi Aplicación React</p>
         </footer>
     );
