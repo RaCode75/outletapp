@@ -34,7 +34,7 @@ const Header = () => {
                  
                     </Link>
                     :
-                    <Link to={'/login'}><img src='../src/assets/cart.svg' className='size-12'></img>
+                    <Link to={'/login'}><img src={cart} className='size-12'></img>
 
                     </Link>
                     }
