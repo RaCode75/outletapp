@@ -38,14 +38,14 @@ const GestionProductos = () => {
     <div className=''>
       <div className=''>
         <div className='flex flex-row w-full justify-around bg-indigo-100 py-2'>
-           <h2>Lista de Productos</h2>
+           <h2 className="text-lg font-semibold">Lista de Productos</h2>
           <div className="">
             <button
               onClick={abrirFormularioAgregar}
-              className='flex'
+              className='flex items-center'
             >
               <CirclePlus />
-              <p className="ml-2">Agregar Producto</p>
+              <p className="ml-2 text-lg font-semibold">Agregar Producto</p>
             </button>
           </div>
         </div>

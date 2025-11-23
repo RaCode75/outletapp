@@ -14,7 +14,7 @@ const Header = () => {
     const contadorCarrito = carrito.length;
 
     return(
-        <header  className="flex flex-row  sm:items-start justify-around bg-indigo-500">
+        <header  className="flex flex-row pt-4 sm:pt-0  sm:items-start justify-around bg-indigo-500">
             <div className='items-start text-center my-1 mx-1'>
                 <img src= {logo} className='h-15 w-15 mr-2 ml-2 md:h-20 md:w-20'></img>
                 <h2 className='text-lg font-medium text-gray-300 '>Outlet App</h2>
