@@ -4,6 +4,7 @@ import { CarritoContext } from '../context/CarritoContext';
 import Nav from './Nav'
 import {Link} from 'react-router-dom';
 import logo from '../assets/logo.png'
+import cart from '../assets/cart.svg'
 
 
 const Header = () => {
@@ -29,7 +30,7 @@ const Header = () => {
                     )}
                 <div className='bg-amber-50 w-12 rounded-full my-1 mx-auto'>
                     {isLogin?
-                    <Link to={'/carrito'}><img src='../src/assets/cart.svg' className='size-12'></img>
+                    <Link to={'/carrito'}><img src={cart} className='size-12'></img>
                  
                     </Link>
                     :
