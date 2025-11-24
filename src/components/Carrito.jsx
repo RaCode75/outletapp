@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
+import cart from '../assets/cart.svg'
 
 const Carrito = () => {
     const{carrito, deleteFromCarrito} = useContext(CarritoContext);
@@ -8,7 +9,7 @@ const Carrito = () => {
     return(
         <div className="mx-auto justify-items-center bg-slate-100">
             <div className='w-full justify-items-center pt-2 bg-indigo-300 '>
-                <img className="" src="../src/assets/cart.svg" width={50} height={50}/>
+                <img className="" src={cart} width={50} height={50}/>
                 <h2 className="text-lg font-bold text-slate-50">Tu Carrito</h2>
                 
             </div>
