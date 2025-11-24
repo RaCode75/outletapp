@@ -10,28 +10,28 @@ const GestionProductos = () => {
   // Cargando contexto de producto
   const { productos, eliminarProducto } = useProductsContext();
   // Estados 
-  const [mostrarForm, setMostrarForm] = useState(false);
-  const [modoFormulario, setModoFormulario] = useState("add");
-  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+  const [mostrarForm, setViewForm] = useState(false);
+  const [modoFormulario, setFormMode] = useState("add");
+  const [productoSeleccionado, setSelectProduct] = useState(null);
 
   // Abrir formulario para AGREGAR
-  const abrirFormularioAgregar = () => {
-    setModoFormulario("add");
-    setProductoSeleccionado(null); // Sin producto inicial
-    setMostrarForm(true);
+  const openAddForm = () => {
+    setFormMode("add");
+    setSelectProduct(null); // Sin producto inicial
+    setViewForm(true);
   };
 
   // Abrir formulario para EDITAR
-  const abrirFormularioEditar = (producto) => {
-    setModoFormulario("edit");
-    setProductoSeleccionado(producto); // Pasar el producto a editar
-    setMostrarForm(true);
+  const openEditForm = (producto) => {
+    setFormMode("edit");
+    setSelectProduct(producto); // Pasar el producto a editar
+    setViewForm(true);
   };
 
   // Cerrar formulario
   const cerrarFormulario = () => {
-    setMostrarForm(false);
-    setProductoSeleccionado(null);
+    setViewForm(false);
+    setSelectProduct(null);
   };
 
   return (
@@ -41,7 +41,7 @@ const GestionProductos = () => {
            <h2 className="text-lg font-semibold">Lista de Productos</h2>
           <div className="">
             <button
-              onClick={abrirFormularioAgregar}
+              onClick={openAddForm}
               className='flex items-center'
             >
               <CirclePlus />
@@ -64,13 +64,13 @@ const GestionProductos = () => {
 
                 <div className="flex justify-between mx-1"> 
                     <button 
-                      className='' 
-                      onClick={() => abrirFormularioEditar(producto)}
+                      className='pl-4' 
+                      onClick={() => openEditForm(producto)}
                     >
                     <SquarePen />
                     </button>
                     <button 
-                      className={''} 
+                      className='pr-4' 
                       onClick={() => eliminarProducto(producto.id)}
                     >
                     <TrashIcon />

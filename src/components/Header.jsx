@@ -22,9 +22,9 @@ const Header = () => {
             <div className='px-0 mx-0'>
                 <Nav /> 
             </div>
-            <div className='bg-indigo-500 mt-3'>
+            <div className='bg-indigo-500 mt-3 text-center'>
                       {contadorCarrito > 0 && (
-                        <span className=' absolute bg-amber-300 w-5 rounded-full'>
+                        <span className=' absolute bg-amber-300 w-5 rounded-full border-slate-200 font-medium'>
                             {contadorCarrito}
                         </span>
                     )}
@@ -43,8 +43,7 @@ const Header = () => {
 
                 {isLogin ? 
                     <button onClick={logout} 
-                    className='text-indigo-50 font-medium text-lg mr-6 md:mx-auto py-0.5 bg-indigo-500
-                    hover:bg-gray-200 w-100vw content-center px-2 rounded hover:text-gray-600'>Logout</button>
+                    className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw text-center content-center px-2 rounded hover:text-gray-600 mx-6'>Logout</button>
                     :
                     <button className='text-indigo-50 font-medium text-lg py-0.5 bg-indigo-500  hover:bg-gray-200 w-100vw text-center content-center px-2 rounded hover:text-gray-600 mx-6'>
                         <Link to={'/login'}>Login</Link></button>   

@@ -36,8 +36,8 @@ const Login = () => {
                         onChange={(ev) => setContraseña(ev.target.value)}
                         />
                     <button type='submit'className='group relative inline-flex h-8 w-[100px] items-center justify-center mx-auto
-                        overflow-hidden rounded-md border border-neutral-200 bg-indigo-200 px-6 font-medium text-neutral-600 transition-all
-                        [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none mt-2 mb-4 hover:cursor-pointer hover:bg-indigo-300'>
+                        overflow-hidden rounded-md border border-slate-400 bg-indigo-500 px-6 font-medium text-slate-50 transition-all
+                        shadow-md shadow-slate-500 active:translate-y-[2px] active:shadow-none mt-2 mb-4 hover:cursor-pointer hover:bg-slate-50 hover:text-indigo-500'>
                     Login</button>
             </form>
         </div>
