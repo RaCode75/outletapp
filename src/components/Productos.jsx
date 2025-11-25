@@ -3,10 +3,22 @@ import Card from "./Card";
 import { Link, RouterContextProvider } from "react-router-dom";
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
+import { BusquedaContext } from "../context/BusquedaContext";
 
 
 const Productos = () => {
+    const { busqueda } = useContext(BusquedaContext);
+
     const [productos, setProductos] = useState([]);
+    const filterProducts = productos.filter(producto => {
+        const filtro = busqueda.toLowerCase();
+        return (
+            producto.nombre.toLowerCase().includes(filtro) ||
+            producto.categoria?.toLowerCase().includes(filtro) ||
+            producto.descripcion?.toLowerCase().includes(filtro) ||
+            producto.precio?.toString().includes(filtro)
+        );
+    });
     const [error, setError] = useState(null);
     const [cargando, setCargando] = useState(true);
 
@@ -35,7 +47,7 @@ const Productos = () => {
         <div className="expositor bg-slate-100 align-middle justify-center">
         <h1 className="w-full text-center mb-2 py-2 font-bold text-slate-50 text-3xl bg-slate-400">Productos</h1>
         <ul className="grid grid-cols-2 justify-around gap-1 items-center md:grid-cols-3 lg:grid-cols-4">
-            { productos.map((producto) => (
+            { filterProducts.map((producto) => (
             <li key={producto.id} className=" flex flex-col align-middle items-center basis-1/4">
                 <Link to={`/productos/${producto.id}`}>
                 <Card data={producto} />

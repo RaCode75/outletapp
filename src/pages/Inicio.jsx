@@ -1,11 +1,12 @@
-/*import { useState } from "react";*/
+import Buscador from '../components/Buscador';
 import Productos from '../components/Productos';
-import Carrito from '../components/Carrito';
+
 
 const Inicio = () => {
 
     return(
         <>
+            <Buscador />
             <Productos />
         </>
       
