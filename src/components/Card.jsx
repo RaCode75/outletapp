@@ -1,7 +1,7 @@
 const Card = ({data}) => {
 
     /*const {title, price,image,category} = data;*/
-    const {nombre, precio,imagen,categoria} = data;
+    const {nombre, precio ,imagen , descripcion, categoria} = data;
 
     return (
         <div className="h-[300px] w-[200px] bg-white rounded-3xl p-3 shadow-md shadow-slate-400  grid-rows-4 justify-items-center content-between m-1">
@@ -10,8 +10,12 @@ const Card = ({data}) => {
             <p>
                 <strong>$ {precio}</strong>
             </p>
-            <p className="mt-4">
+            <p className="mt-2 mb-1 bg-indigo-100 rounded-2xl">
                 <i>Categoria: </i> {categoria}
+            </p>
+            <p className="overflow-y-auto max-h-24 p-1 fancy-scroll ">
+                {descripcion}
+                
             </p>
 
         </div>

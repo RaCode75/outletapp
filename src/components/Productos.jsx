@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
-import { Link, RouterContextProvider } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 import { BusquedaContext } from "../context/BusquedaContext";

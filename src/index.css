@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+/* Scrollbar base (oculto) */
+.fancy-scroll::-webkit-scrollbar {
+  width: 6px;           /* Grosor */
+}
+
+/* Fondo del scroll (invisible) */
+.fancy-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Thumb del scroll (oculto inicialmente) */
+.fancy-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0);   /* Totalmente transparente */
+  border-radius: 10px;
+  transition: background 0.3s ease;   /* Animación suave */
+}
+
+/* Al pasar el mouse aparece */
+.fancy-scroll:hover::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);  /* Color suave del scroll */
+}
+
+/* Al hacer hover DIRECTO sobre el thumb se destaca */
+.fancy-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
