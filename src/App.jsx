@@ -11,6 +11,7 @@ import Carrito from './components/Carrito'
 import Login from './pages/Login'
 import RutaProtegida from './components/RutaProtegida'
 import Admin from './pages/Admin'
+import Registro from './pages/Registro'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Route path='/contacto' element={<Contacto/>}/>
       <Route path='/productos/:id' element={<Detalles/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/registro' element={<Registro />}/>
       <Route 
       path='/carrito'
       element={
