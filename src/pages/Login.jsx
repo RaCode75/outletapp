@@ -34,8 +34,8 @@ const Login = () => {
     }
 
     return (
-        <div className="bg-slate-50">
-        <div className="flex flex-col justify-center h-[60vh] items-center  w-100 mx-auto bg-slate-50">
+        <div className="bg-slate-100">
+        <div className="flex flex-col justify-center h-[60vh] items-center  w-100 mx-auto bg-slate-100">
             <form onSubmit={ manageSubmit} className="flex flex-col w-full gap-2">
                 <h2 className="font-medium text-2xl my-3 text-gray-700 text-center">Login</h2>
                 <label htmlFor="usuario" className="font-medium text-md text-gray-700">Usuario</label>
@@ -58,7 +58,7 @@ const Login = () => {
 
             </form>
 
-                    <div className="flex flex-col w-full items-center mt-4">
+                    <div className="flex flex-col w-full items-center mt-4 bg-slate-100">
                         <p className="font-medium text-2xl mb-5 text-gray-700 text-center">No tienes usuario?</p>
                       <button type='button'
                         onClick={() => navigate("/registro")}

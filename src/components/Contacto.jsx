@@ -21,19 +21,19 @@ const Contacto = () => {
     };
 
     return(
-        <div className="flex justify-center h-[60vh] items-center">
+        <div className="flex justify-center h-[60vh] items-center bg-slate-100">
             <form onSubmit={ manageContacto} className="flex flex-col w-md gap-2">
                 <h2 className="font-medium text-lg my-3 text-gray-700 text-center">Contacto</h2>
 
                 <label htmlFor="Email" className="font-medium text-md text-gray-700">Email</label>
-                <input className="border-1 h-8 px-2 rounded-md"
+                <input className="border-1 h-8 px-2 rounded-md bg-white"
                     type='email'
                     value={correo}
                     id="correo"
                     onChange={(ev) => setCorreo(ev.target.value)}
                     />
                     <label htmlFor="Tu consulta"className="font-medium text-md text-gray-700">Tu consulta</label>
-                    <textarea className="border-1 h-24 px-2 rounded-md"
+                    <textarea className="border-1 h-24 px-2 rounded-md bg-white"
                         type='text'
                         value= {consulta}
                         id="consulta"
