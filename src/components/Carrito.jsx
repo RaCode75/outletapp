@@ -4,7 +4,10 @@ import cart from '../assets/cart.svg'
 
 const Carrito = () => {
     const{carrito, deleteFromCarrito} = useContext(CarritoContext);
-    const total = carrito.reduce((acum, producto) => acum + parseFloat(producto.precio), 0);
+    const total = carrito.reduce((acum, producto) => {
+        const precio = Number(producto.precio) || 0;
+        return acum + precio;
+    }, 0).toFixed(3); 
 
     return(
         <div className="mx-auto justify-items-center bg-slate-100">
@@ -16,9 +19,11 @@ const Carrito = () => {
             <div className="grid grid-cols-2 w-full justify-items-center sm:grid-cols-3 md:grid-cols-4 bg-slate-100 py-4">
 
                 {carrito.map((producto, index) => (
-                    <div key={index} className="h-[300px] w-[200px] bg-white rounded-3xl p-3 shadow-md shadow-slate-400  grid-rows-4 justify-items-center content-between m-1">
+                    <div key={producto.id || index} className="h-[300px] w-[200px] bg-white rounded-3xl p-3 shadow-md shadow-slate-400  grid-rows-4 justify-items-center content-between m-1">
                         <h3 className="text-lg font-semibold">{producto.nombre}</h3>
-                <img src={producto.imagen} className="size-20 m-1"></img>
+                <img src={producto.imagen}
+                alt={producto.nombre}
+                 className="size-20 object-cover rounded m-1"></img>
             <p>
                 <strong>$ {producto.precio}</strong>
             </p>

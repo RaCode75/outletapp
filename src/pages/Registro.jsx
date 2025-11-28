@@ -41,10 +41,10 @@ const Registro = () => {
   };
 
   return (
+    <>
+          <h1 className="w-full text-center mb-2 py-2 font-bold text-slate-50 text-3xl bg-slate-400">Registro</h1>
     <div className="flex justify-center h-[60vh] items-center bg-slate-50">
       <form onSubmit={handleRegister} className="flex flex-col w-md gap-2">
-
-        <h2 className="font-medium text-lg my-3 text-gray-700 text-center">Registro</h2>
 
         <label className="font-medium text-md text-gray-700">Correo</label>
         <input
@@ -76,6 +76,7 @@ const Registro = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 

@@ -35,10 +35,10 @@ const Login = () => {
 
     return (
         <div className="bg-slate-100">
+                    <h1 className="w-full text-center mb-2 py-2 font-bold text-slate-50 text-3xl bg-slate-400">Login</h1>
         <div className="flex flex-col justify-center h-[60vh] items-center  w-100 mx-auto bg-slate-100">
             <form onSubmit={ manageSubmit} className="flex flex-col w-full gap-2">
-                <h2 className="font-medium text-2xl my-3 text-gray-700 text-center">Login</h2>
-                <label htmlFor="usuario" className="font-medium text-md text-gray-700">Usuario</label>
+               <label htmlFor="usuario" className="font-medium text-md text-gray-700">Usuario</label>
                 <input className="border-1 h-8 px-2 rounded-md bg-white"
                     type='text'
                     value={usuario}

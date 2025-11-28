@@ -6,7 +6,9 @@ const Card = ({data}) => {
     return (
         <div className="h-[300px] w-[200px] bg-white rounded-3xl p-3 shadow-md shadow-slate-400  grid-rows-4 justify-items-center content-between m-1">
             <h3 className="text-lg font-semibold text-center">{nombre}</h3>
-                <img src={imagen} className="size-20 m-1"></img>
+                <img src={imagen}
+                 alt={nombre}
+                 className="size-20 m-1 object-cover"></img>
             <p>
                 <strong>$ {precio}</strong>
             </p>
