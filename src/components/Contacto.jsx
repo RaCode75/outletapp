@@ -21,9 +21,11 @@ const Contacto = () => {
     };
 
     return(
+        <>
+        <h1 className="w-full text-center mb-2 py-2 font-bold text-slate-50 text-3xl bg-slate-400">Contacto</h1>
         <div className="flex justify-center h-[60vh] items-center bg-slate-100">
+                    
             <form onSubmit={ manageContacto} className="flex flex-col w-md gap-2">
-                <h2 className="font-medium text-lg my-3 text-gray-700 text-center">Contacto</h2>
 
                 <label htmlFor="Email" className="font-medium text-md text-gray-700">Email</label>
                 <input className="border-1 h-8 px-2 rounded-md bg-white"
@@ -48,6 +50,7 @@ const Contacto = () => {
                     Enviar</button>
             </form>
         </div>
+        </>
     );
 }
 

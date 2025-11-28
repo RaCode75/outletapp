@@ -57,6 +57,7 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                                 name="nombre"
                                 id="nombre"
                                 className="block border-2 border-indigo-300 rounded-2xl w-full px-3 py-3 box-border transition-all delay-150 ease-in-out
+                                text-slate-600
                                 placeholder: pl-4 text-lg font-medium bg-indigo-50 focus:outline-indigo-500"
                                 placeholder="Nombre del producto"
                                 value={producto.nombre || ""}
@@ -74,6 +75,7 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                                 name="categoria"
                                 id="categoria"
                                 className="block border-2 border-indigo-300 rounded-2xl w-full px-3 py-3 box-border transition-all delay-150 ease-in-out
+                                text-slate-600
                                 placeholder: pl-4 text-lg font-medium bg-indigo-50 focus:outline-indigo-500"
                                 placeholder="Categoria"
                                 value={producto.categoria || ""}
@@ -93,6 +95,7 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                                 name="precio"
                                 id="precio"
                                 className="block border-2 border-indigo-300 rounded-2xl w-full px-3 py-3 box-border transition-all delay-150 ease-in-out
+                                text-slate-600
                                 placeholder: pl-4 text-lg font-medium bg-indigo-50 focus:outline-indigo-500"
                                 placeholder="$ 0.00"
                                 value={producto.precio || ""}
@@ -114,7 +117,8 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                             name="imagen"
                             id="imagen"
                             className="block border-2 border-indigo-300 rounded-2xl w-full px-3 py-3 box-border transition-all delay-150 ease-in-out
-                                placeholder: pl-4 text-lg font-medium bg-indigo-50 focus:outline-indigo-500"
+                            text-slate-600
+                            placeholder: pl-4 text-lg font-medium bg-indigo-50 focus:outline-indigo-500"
                             placeholder="https://ejemplo.com/imagen.png"
                             value={producto.imagen || ''}
                             onChange={changeManage}
@@ -132,7 +136,8 @@ const ProductForm =({ productoInicial = {}, modo = "add", onClose }) => {
                             id="descripcion"
                             rows='4'
                             className="block border-2 border-indigo-300 rounded-2xl w-full px-3 py-3 box-border transition-all delay-150 ease-in-out
-                                placeholder: pl-4 text-lg font-medium bg-indigo-50 focus:outline-indigo-500 resize-y"
+                            text-slate-600
+                            placeholder: pl-4 text-lg font-medium bg-indigo-50 focus:outline-indigo-500 resize-y"
                             placeholder="Descripción del Producto"
                             value={producto.descripcion || ''}
                             onChange={changeManage}

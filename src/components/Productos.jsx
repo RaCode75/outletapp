@@ -1,6 +1,10 @@
-import { useState, useContext} from "react";
+import { useEffect, useContext} from "react";
+import { useFilteredProducts } from "../hooks/useFilteredProducts";
+import { usePagination } from "../hooks/usePagination";
+
 import Card from "./Card";
 import { Link } from "react-router-dom";
+
 import { CarritoContext } from "../context/CarritoContext";
 import { BusquedaContext } from "../context/BusquedaContext";
 import {ProductsContext} from "../context/ProductsContext";
@@ -12,29 +16,21 @@ const Productos = () => {
     const{addToCarrito} = useContext(CarritoContext);
 
     //Busqueda
-    const filterProducts = productos.filter(producto => {
-         const filtro = busqueda.toLowerCase();
-            return ( producto.nombre.toLowerCase().includes(filtro) ||
-                 producto.categoria?.toLowerCase().includes(filtro) ||
-                 producto.descripcion?.toLowerCase().includes(filtro) ||
-                 producto.precio?.toString().includes(filtro)
-             );
-        });
+    const filterProducts = useFilteredProducts(productos, busqueda);
     
-    // Estados para paginación
-    const [currentPage, setCurrentPage] = useState(1);
-    const productsPerPage = 8; // cantidad por página
+     const {
+    currentPage,
+    totalPages,
+    currentItems: currentProducts,
+    nextPage,
+    prevPage,
+    resetPage,
+  } = usePagination(filterProducts, 8);
 
-    // Obtener productos filtrados de la página actual
-    const indexOfLastProduct = currentPage * productsPerPage;
-    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    const currentProducts = filterProducts.slice(indexOfFirstProduct, indexOfLastProduct);
-    const totalPages = Math.ceil(filterProducts.length / productsPerPage);
-
-    // Cambiar página
-    const nextPage = () => currentPage < totalPages && setCurrentPage(currentPage + 1);
-    const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
-
+    useEffect(() => {
+    resetPage();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [busqueda]);
 
     if (cargando) return 'Cargando tienda...';
     if (error) return error;
@@ -63,19 +59,23 @@ const Productos = () => {
                 <button
                     onClick={prevPage}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 bg-slate-400 text-white rounded disabled:bg-slate-300"
+                    className="px-4 py-2 font-bold bg-slate-500 text-white rounded transition-all
+                      shadow-md shadow-slate-50 hover:cursor-pointer hover:bg-slate-50 hover:shadow-slate-500 hover:text-slate-500
+                      disabled:hover:bg-slate-300 disabled:hover:text-white disabled:hover:cursor-not-allowed disabled:bg-slate-300"
                     >
                     Anterior
                 </button>
 
-                <span className="text-lg font-bold">
-                    {currentPage} / {Math.ceil(filterProducts.length / productsPerPage)}
+                <span className="text-lg font-bold text-slate-500">
+                    {currentPage} / {totalPages}
                 </span>
 
                 <button
                     onClick={nextPage}
-                    disabled={currentPage === Math.ceil(filterProducts.length / productsPerPage)}
-                    className="px-4 py-2 bg-slate-400 text-white rounded disabled:bg-slate-300"
+                    disabled={currentPage === totalPages}
+                    className="px-4 py-2 font-bold bg-slate-500 text-white rounded transition-all
+                      shadow-md shadow-slate-50 hover:cursor-pointer hover:bg-slate-50 hover:shadow-slate-500 hover:text-slate-500
+                      disabled:hover:bg-slate-300 disabled:hover:text-white disabled:hover:cursor-not-allowed disabled:bg-slate-300"
                     >
                         Siguiente
                     </button>

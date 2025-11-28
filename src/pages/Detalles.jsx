@@ -30,7 +30,7 @@ const Detalles = () => {
 
     return (
         <div className="flex flex-col items-center py-4 bg-slate-100">
-            <h3 className="w-full text-center mb-2 py-2 font-bold text-indigo-50 text-3xl bg-indigo-300">{nombre}</h3>
+            <h3 className="w-full text-center mb-2 py-2 font-bold text-indigo-50 text-3xl bg-slate-400">{nombre}</h3>
                 <img src={imagen} className="w-100 my-4"></img>
             <p className="flex items-center">
                 <strong
